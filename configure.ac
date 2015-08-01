@@ -51,6 +51,6 @@ LIBS="$LIBS $LIBICONV"
 ALL_LINGUAS="ru ca"
 
 
-AM_GNU_GETTEXT
+AM_GNU_GETTEXT([external])
 AC_CONFIG_SUBDIRS(kkstrtext-0.1 kkconsui-0.1)
-AC_OUTPUT(Makefile src/Makefile src/abstract/Makefile po/Makefile.in intl/Makefile)
+AC_OUTPUT(Makefile src/Makefile src/abstract/Makefile po/Makefile.in )

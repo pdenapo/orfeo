@@ -47,6 +47,8 @@
 
 #endif
 
+#include <memory>
+
 static int cpid = -1;
 static FILE *fpread, *fpwrite;
 

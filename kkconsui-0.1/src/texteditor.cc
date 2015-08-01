@@ -1939,10 +1939,6 @@ void texteditor::undorecordfree(void *p) {
     if(ur) delete ur;
 }
 
-int texteditor::findint(void *p1, void *p2) {
-    return *(int *) p1 != (int) p2;
-}
-
 int texteditor::findhighline(void *p1, void *p2) {
     return *(int *) p1 != ((highline *) p2)->line;
 }

@@ -102,7 +102,6 @@ class texteditor: public abstractuicontrol {
 	static void undorecordfree(void *p);
 	static void highlinefree(void *p);
 
-	static int findint(void *p1, void *p2);
 	static int findhl(void *p1, void *p2);
 	static int findhighline(void *p1, void *p2);
 	static int sorthl(void *p1, void *p2);

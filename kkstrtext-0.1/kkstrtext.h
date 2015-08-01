@@ -40,7 +40,6 @@ struct quotedblock {
 void charpointerfree(void *p);
 void nothingfree(void *p);
 int stringcompare(void *s1, void *s2);
-int intcompare(void *s1, void *s2);
 
 string leadcut(const string &base, const string &delim = "\t\n\r ");
 string trailcut(const string &base, const string &delim = "\t\n\r ");

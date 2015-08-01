@@ -80,8 +80,7 @@ host_triplet = @host@
 subdir = .
 DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am \
 	$(top_srcdir)/configure $(am__configure_deps) \
-	$(srcdir)/config.h.in mkinstalldirs \
-	$(top_srcdir)/intl/Makefile.in ABOUT-NLS AUTHORS COPYING \
+	$(srcdir)/config.h.in mkinstalldirs ABOUT-NLS AUTHORS COPYING \
 	ChangeLog INSTALL NEWS README TODO compile config.guess \
 	config.rpath config.sub depcomp install-sh missing
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
@@ -92,7 +91,7 @@ am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log \
  configure.lineno config.status.lineno
 mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
 CONFIG_HEADER = config.h
-CONFIG_CLEAN_FILES = intl/Makefile
+CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
@@ -194,26 +193,21 @@ am__distuninstallcheck_listfiles = $(distuninstallcheck_listfiles) \
   | sed 's|^\./|$(prefix)/|' | grep -v '$(infodir)/dir$$'
 distcleancheck_listfiles = find . -type f -print
 ACLOCAL = @ACLOCAL@
-ALLOCA = @ALLOCA@
 AMTAR = @AMTAR@
 AM_DEFAULT_VERBOSITY = @AM_DEFAULT_VERBOSITY@
 AUTOCONF = @AUTOCONF@
 AUTOHEADER = @AUTOHEADER@
 AUTOMAKE = @AUTOMAKE@
 AWK = @AWK@
-BUILD_INCLUDED_LIBINTL = @BUILD_INCLUDED_LIBINTL@
-CATOBJEXT = @CATOBJEXT@
 CC = @CC@
 CCDEPMODE = @CCDEPMODE@
 CFLAGS = @CFLAGS@
-CFLAG_VISIBILITY = @CFLAG_VISIBILITY@
 CPP = @CPP@
 CPPFLAGS = @CPPFLAGS@
 CXX = @CXX@
 CXXDEPMODE = @CXXDEPMODE@
 CXXFLAGS = @CXXFLAGS@
 CYGPATH_W = @CYGPATH_W@
-DATADIRNAME = @DATADIRNAME@
 DEFS = @DEFS@
 DEPDIR = @DEPDIR@
 ECHO_C = @ECHO_C@
@@ -221,47 +215,25 @@ ECHO_N = @ECHO_N@
 ECHO_T = @ECHO_T@
 EGREP = @EGREP@
 EXEEXT = @EXEEXT@
-GENCAT = @GENCAT@
 GETTEXT_MACRO_VERSION = @GETTEXT_MACRO_VERSION@
-GLIBC2 = @GLIBC2@
-GLIBC21 = @GLIBC21@
 GMSGFMT = @GMSGFMT@
 GMSGFMT_015 = @GMSGFMT_015@
 GREP = @GREP@
-HAVE_ASPRINTF = @HAVE_ASPRINTF@
-HAVE_NEWLOCALE = @HAVE_NEWLOCALE@
-HAVE_POSIX_PRINTF = @HAVE_POSIX_PRINTF@
-HAVE_SNPRINTF = @HAVE_SNPRINTF@
-HAVE_VISIBILITY = @HAVE_VISIBILITY@
-HAVE_WPRINTF = @HAVE_WPRINTF@
 INSTALL = @INSTALL@
 INSTALL_DATA = @INSTALL_DATA@
 INSTALL_PROGRAM = @INSTALL_PROGRAM@
 INSTALL_SCRIPT = @INSTALL_SCRIPT@
 INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
-INSTOBJEXT = @INSTOBJEXT@
-INTLBISON = @INTLBISON@
 INTLLIBS = @INTLLIBS@
-INTLOBJS = @INTLOBJS@
-INTL_DEFAULT_VERBOSITY = @INTL_DEFAULT_VERBOSITY@
-INTL_LIBTOOL_SUFFIX_PREFIX = @INTL_LIBTOOL_SUFFIX_PREFIX@
 INTL_MACOSX_LIBS = @INTL_MACOSX_LIBS@
 LDFLAGS = @LDFLAGS@
 LIBICONV = @LIBICONV@
 LIBINTL = @LIBINTL@
-LIBMULTITHREAD = @LIBMULTITHREAD@
 LIBOBJS = @LIBOBJS@
-LIBPTH = @LIBPTH@
-LIBPTH_PREFIX = @LIBPTH_PREFIX@
 LIBS = @LIBS@
-LIBTHREAD = @LIBTHREAD@
-LTLIBC = @LTLIBC@
 LTLIBICONV = @LTLIBICONV@
 LTLIBINTL = @LTLIBINTL@
-LTLIBMULTITHREAD = @LTLIBMULTITHREAD@
 LTLIBOBJS = @LTLIBOBJS@
-LTLIBPTH = @LTLIBPTH@
-LTLIBTHREAD = @LTLIBTHREAD@
 MAKEINFO = @MAKEINFO@
 MKDIR_P = @MKDIR_P@
 MSGFMT = @MSGFMT@
@@ -277,18 +249,13 @@ PACKAGE_URL = @PACKAGE_URL@
 PACKAGE_VERSION = @PACKAGE_VERSION@
 PATH_SEPARATOR = @PATH_SEPARATOR@
 POSUB = @POSUB@
-PRI_MACROS_BROKEN = @PRI_MACROS_BROKEN@
 RANLIB = @RANLIB@
 SED = @SED@
 SET_MAKE = @SET_MAKE@
 SHELL = @SHELL@
 STRIP = @STRIP@
-USE_INCLUDED_LIBINTL = @USE_INCLUDED_LIBINTL@
 USE_NLS = @USE_NLS@
 VERSION = @VERSION@
-WINDRES = @WINDRES@
-WOE32 = @WOE32@
-WOE32DLL = @WOE32DLL@
 XGETTEXT = @XGETTEXT@
 XGETTEXT_015 = @XGETTEXT_015@
 XGETTEXT_EXTRA_OPTIONS = @XGETTEXT_EXTRA_OPTIONS@
@@ -347,9 +314,10 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = kkstrtext-0.1 kkconsui-0.1 intl po src
-EXTRA_DIST = orpheus.motor config.rpath orpheus.1 NEWS TODO README AUTHORS INSTALL ABOUT-NLS ChangeLog COPYING FAQ orpheus.spec kkstrtext-0.1/* kkconsui-0.1/*
+SUBDIRS = kkstrtext-0.1 kkconsui-0.1 po src
+EXTRA_DIST = m4/ChangeLog  orpheus.motor config.rpath orpheus.1 NEWS TODO README AUTHORS INSTALL ABOUT-NLS ChangeLog COPYING FAQ orpheus.spec kkstrtext-0.1/* kkconsui-0.1/*
 AUTOMAKE_OPTIONS = foreign
+ACLOCAL_AMFLAGS = -I m4
 all: config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
 
@@ -403,8 +371,6 @@ $(srcdir)/config.h.in:  $(am__configure_deps)
 
 distclean-hdr:
 	-rm -f config.h stamp-h1
-intl/Makefile: $(top_builddir)/config.status $(top_srcdir)/intl/Makefile.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
 
 # This directory's subdirectories are mostly independent; you can cd
 # into them and run 'make' without going through this Makefile.
@@ -645,7 +611,6 @@ distcheck: dist
 	  && am__cwd=`pwd` \
 	  && $(am__cd) $(distdir)/_build \
 	  && ../configure \
-	    --with-included-gettext \
 	    $(AM_DISTCHECK_CONFIGURE_FLAGS) \
 	    $(DISTCHECK_CONFIGURE_FLAGS) \
 	    --srcdir=.. --prefix="$$dc_install_base" \
