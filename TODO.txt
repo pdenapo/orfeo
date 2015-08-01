@@ -1,0 +1,9 @@
+
+Todo:
+* fix all compilation warnings.
+* Restore cdbs support ?
+* Support flac ?
+
+Done:
+* Update automake
+* Build the debian package with the patches included into the source.
