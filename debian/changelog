@@ -1,0 +1,86 @@
+orpheus (1.6-1.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * debian/patches/gcc-4.3-include-fix: Closes: #474864.
+  * debian/patches/ftbfs_amd64_cast.diff: Added.  Closes: #421146, #334428.
+  * debian/control: Removed libghttp-dev from Build-Depends.  Closes: #474864.
+  * debian/control: Moved homepage to "Homepage:" field.
+
+ -- Bart Martens <bartm@debian.org>  Wed, 02 Jul 2008 15:22:00 +0200
+
+orpheus (1.6-1) unstable; urgency=low
+
+  * New upstream release. (Closes: #411993)
+    - Delete a patch named "100_gcc34-fix.diff", which is no more necessary.
+    - Add a new patch named "regenerate-configure-scripts.diff" to work around
+      build errors due to inconsistencies between interfaces of configure
+      scripts.
+    - Add a new build dependency on libxml2-dev for internet radio presets
+      fetching.
+
+ -- Noritada Kobayashi <nori1@dolphin.c.u-tokyo.ac.jp>  Wed, 25 Apr 2007 20:56:11 +0900
+
+orpheus (1.5-7) unstable; urgency=low
+
+  * New maintainer. (Closes: #390868)
+  * Make various packaging cleanups:
+    - Simplify build rules by using CDBS in addition to debhelper.
+    - Switch the patch management system from dpatch to quilt and add header
+      descriptions to patches.
+    - Include debian/watch.
+    - Exclude diffs in config.guess and config.sub from shipment.
+    - Bump Standards-Version to 3.7.2.
+    - Bump debhelper compat level to 5.
+    - Update and reformat debian/copyright.
+    - Update the package description for orpheus.
+    - Delete an unused variable ${misc:Depends} from dependency of orpheus.
+  * Include a missing manpage orpheus(1) and improve it based on one provided
+    by Jose Parrella, adding a patch. (Closes: #380043, #335090)
+  * Include missing instructions for changing color scheme, adding a patch.
+    (Closes: #334470)
+
+ -- Noritada Kobayashi <nori1@dolphin.c.u-tokyo.ac.jp>  Fri, 23 Feb 2007 18:28:17 +0900
+
+orpheus (1.5-6) unstable; urgency=low
+
+  * Orphaning package. (closes: #390868)
+
+ -- Norbert Tretkowski <nobse@debian.org>  Tue,  2 Jan 2007 22:50:36 +0100
+
+orpheus (1.5-5) unstable; urgency=high
+
+  * Added a new patch to fix a stack-based buffer overflow in kkstrtext.h
+    in ktools library. (CVE-2005-3863) (closes: #368402)
+
+ -- Norbert Tretkowski <nobse@debian.org>  Tue,  1 Aug 2006 21:58:43 +0200
+
+orpheus (1.5-4) unstable; urgency=low
+
+  * Added new patches from Taco IJsselmuiden:
+    + Fixed an off-by-one in 'play <n>' commando. (closes: #334963)
+    + Fixed '-r next' and '-r prev' when not playing. (closes: #334964)
+    + Added start/stop/clear commandline commandos. (closes: #334965)
+
+ -- Norbert Tretkowski <nobse@debian.org>  Fri, 21 Oct 2005 22:47:19 +0200
+
+orpheus (1.5-3) unstable; urgency=low
+
+  * Suggest vorbis-tools instead ogg123 (thanks to Jesus Climent).
+  * Fixed wrong capitalization in long description (again thanks to Jesus
+    Climent).
+
+ -- Norbert Tretkowski <nobse@debian.org>  Mon, 17 Oct 2005 21:12:08 +0200
+
+orpheus (1.5-2) unstable; urgency=low
+
+  * Removed NEWS and TODO files.
+  * Added libvorbis-dev and libghttp-dev to build-dependencies.
+
+ -- Norbert Tretkowski <nobse@debian.org>  Sun, 16 Oct 2005 19:59:14 +0200
+
+orpheus (1.5-1) unstable; urgency=low
+
+  * Initial release. (closes: #333949)
+
+ -- Norbert Tretkowski <nobse@debian.org>  Fri, 14 Oct 2005 17:47:25 +0200
+

@@ -1,0 +1,9 @@
+101_fix-buffer-overflow.diff
+patch.orpheus-1.5.add-start-stop-clear-1.diff
+patch.orpheus-1.5.fix-nexttrack-prevtrack-1.diff
+patch.orpheus-1.5.fix-play-n-1.diff
+improve-manpage.diff
+add-more-instructions.diff
+regenerate-configure-scripts.diff
+gcc-4.3-include-fix
+ftbfs_amd64_cast.diff

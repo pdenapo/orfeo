@@ -1,0 +1,16 @@
+Fix an off-by-one in 'play <n>' command. (Closes: #334963)
+Index: orpheus-1.5/src/uitext.cc
+===================================================================
+--- orpheus-1.5.orig/src/uitext.cc	2004-02-17 02:18:21.000000000 +0100
++++ orpheus-1.5/src/uitext.cc	2005-10-21 09:03:33.000000000 +0200
+@@ -120,8 +120,8 @@
+ }
+ 
+ void OrpheusTextUI::play(int n) {
+-    if(n > 0 && n < plist.size())
+-	playtrack(*(plist.begin() + n + 1));
++    if(n > 0 && n <= plist.size())
++	playtrack(*(plist.begin() + n - 1));
+ }
+ 
+ void OrpheusTextUI::nexttrack() {

@@ -1,0 +1,4 @@
+# Watch control file for uscan
+
+version=3
+http://thekonst.net/orpheus/ /download/orpheus-(.*).tar.gz

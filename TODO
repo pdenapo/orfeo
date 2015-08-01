@@ -1,0 +1,32 @@
+
+/* DONE */
+
+> sorry to bother you again, I just played with orphamp and noticed
+> something - orpheus doesn't close descriptor (or whatever) when
+> it ends playing file.. I mean, look at lsof od to /proc fo fd
+> folder, previously played files are still opened!
+    these were pipes
+
+srand(time(0));
+
+--locales-fix
+
+> * add item dialog behaves a bit weird - I mean sorting folders
+> doesn't work properly when the folder name start with #, ( or
+> whatever...
+
+/* BUGS */
+
+/* TODO */
+
+.cddb fetched with tcd don't have the same ids
+
+patch for BSD from Andrej Zverev
+
+settable track title format for the list
+
+stereo mode display
+
+tplayer to play internet streams
+
+lynx-like motion -> right and left to enter and exit folders

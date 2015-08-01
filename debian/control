@@ -1,0 +1,37 @@
+Source: orpheus
+Section: sound
+Priority: optional
+Maintainer: Noritada Kobayashi <nori1@dolphin.c.u-tokyo.ac.jp>
+Build-Depends: cdbs, debhelper (>= 5), quilt, autotools-dev, libncurses5-dev, libvorbis-dev, libxml2-dev
+Standards-Version: 3.7.2
+Homepage: http://thekonst.net/orpheus/
+
+Package: orpheus
+Architecture: any
+Depends: ${shlibs:Depends}
+Recommends: vorbis-tools, mpg321 | mpg123
+Description: light-weight text mode menu- and window-driven audio player
+ Orpheus is a light-weight text mode menu- and window-driven audio player
+ application for CDs and files in MP3 and Vorbis Ogg format.  Brief list
+ of its features is as follows:
+   * Text mode user interface
+     + Based on the ncurses library
+     + Provides windows, menus and dialogs
+     + Configurable color schemes
+     + Configuration is done with dialogs
+   * Player
+     + Supports MP3 (through mpg123), OGG (with ogg123) and CD tracks
+     + Saves and loads playlists
+     + Provides quick access to recent lists played
+     + Can combine CD, MP3 and OGG tracks in the same playlist
+     + Edit MP3 and OGG ID tags feature
+     + "Repeat track", "Repeat play list" and "Random" play modes
+     + Play list sorting and search options
+     + Auto-generated currently_playing file which makes it possible to
+       easily find out from other applications what is playing now
+     + Internal mixer controller
+     + Command line interface for controlling an already running instance
+       of the program
+   * Network
+     + CDDB information retrieval for CDs
+     + HTTP proxy support

@@ -1,0 +1,49 @@
+AC_INIT(aclocal.m4)
+AM_INIT_AUTOMAKE(orpheus, 1.6)
+
+AC_CANONICAL_HOST
+
+AC_PROG_CC
+AC_PROG_CXX
+AC_PROG_CPP
+AC_PROG_RANLIB
+
+AM_CONFIG_HEADER(config.h)
+
+###     use option --enable-locales-fix to fix problems with double-byte
+###     encodings on systems with broken locale, iscntrl()
+
+AC_ARG_ENABLE(locales-fix,
+	[  --enable-locales-fix    enables workaround for broken locales. use this
+			  option if some of characters in your texts in Chinese
+			  or Japanese diappear])
+
+AC_CHECK_HEADERS(sys/soundcard.h soundcard.h machine/soundcard.h, break)
+
+AM_PATH_XML2(2.0.0, [
+    CPPFLAGS="$CPPFLAGS $XML_CPPFLAGS"
+    LIBS="$LIBS $XML_LIBS"
+    AC_DEFINE(HAVE_LIBXML2, 1, [use libxml2])
+], [
+    AC_MSG_WARN(libxml2 not found, internet radio presets fetching disabled)
+])
+
+AC_CHECK_LIB(ncurses, main,, AC_CHECK_LIB(curses, main,, AC_MSG_ERROR(The ncurses terminal library is required in order to build the program)))
+
+AC_CHECK_LIB(ghttp, ghttp_request_new,,
+    [AC_MSG_WARN(libghttp not found - the support for CDDB is be disabled)])
+
+AC_CHECK_LIB(vorbis, vorbis_synthesis_headerin,,
+    AC_MSG_WARN(libvorbisfile not found - the support for OGG tags edit is disabled))
+    
+AC_CHECK_LIB(vorbisfile, ov_open,,
+    AC_MSG_WARN(libvorbis not found - the support for OGG files is disabled))
+
+AM_ICONV_LINK
+
+LIBS="$LIBS $LIBICONV"
+
+ALL_LINGUAS="ru ca"
+AM_GNU_GETTEXT
+AC_CONFIG_SUBDIRS(kkstrtext-0.1 kkconsui-0.1)
+AC_OUTPUT(Makefile src/Makefile src/abstract/Makefile po/Makefile.in intl/Makefile)

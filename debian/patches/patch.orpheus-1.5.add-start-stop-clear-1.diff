@@ -1,0 +1,84 @@
+Add start/stop/clear commandline commands. (Closes: #334965)
+Index: orpheus-1.5/src/abstract/userinterface.h
+===================================================================
+--- orpheus-1.5.orig/src/abstract/userinterface.h	2004-02-14 16:11:25.000000000 +0100
++++ orpheus-1.5/src/abstract/userinterface.h	2005-10-21 08:57:02.000000000 +0200
+@@ -19,6 +19,9 @@
+ 	virtual void doadd(const string &aitem) = 0;
+ 	virtual void loadplaylist(const string &lname) = 0;
+ 	virtual void play(int n) = 0;
++	virtual void playcurrent() = 0;
++	virtual void stop() = 0;
++	virtual void clear() = 0;
+ 
+ 	virtual void commandline(int argc, char **argv) { }
+ 	virtual void status(const string &s) { }
+Index: orpheus-1.5/src/main.cc
+===================================================================
+--- orpheus-1.5.orig/src/main.cc	2004-02-14 18:11:05.000000000 +0100
++++ orpheus-1.5/src/main.cc	2005-10-21 08:58:31.000000000 +0200
+@@ -60,6 +60,15 @@
+ 	    } else if(tok == "play") {
+ 		ui.play(atoi(cmd.c_str()));
+ 
++	    } else if(tok == "stop") {
++		ui.stop();
++
++	    } else if(tok == "start") {
++		ui.playcurrent();
++
++	    } else if(tok == "clear") {
++		ui.clear();
++
+ 	    }
+ 
+ 	    f.close();
+Index: orpheus-1.5/src/uitext.cc
+===================================================================
+--- orpheus-1.5.orig/src/uitext.cc	2004-02-17 02:18:21.000000000 +0100
++++ orpheus-1.5/src/uitext.cc	2005-10-21 09:01:22.000000000 +0200
+@@ -161,6 +161,30 @@
+     }
+ }
+ 
++void OrpheusTextUI::stop() {
++	cleartrack();
++	update();
++}
++void OrpheusTextUI::clear() {
++	cleartrack();
++	plist.clear();
++	update();
++}
++void OrpheusTextUI::playcurrent() {
++    OrpheusPlayList::iterator nt;
++    if ( !currenttrack ) {
++	nt = plist.begin() + trackm.getpos();
++    } else {
++	nt = find(plist.begin(), plist.end(), currenttrack);
++    }
++    if (nt != plist.end()) {
++    	playtrack(*nt);
++    } else {
++	cleartrack();
++	update();
++    }
++}
++
+ void OrpheusTextUI::loadcolors() {
+     string fname = (string) getenv("HOME") + "/.orpheus/colors";
+ 
+Index: orpheus-1.5/src/uitext.h
+===================================================================
+--- orpheus-1.5.orig/src/uitext.h	2004-02-14 15:53:34.000000000 +0100
++++ orpheus-1.5/src/uitext.h	2005-10-21 09:01:38.000000000 +0200
+@@ -55,6 +55,9 @@
+ 	void playtrack(track *t);
+ 	void cleartrack();
+ 	void play(int n);
++	void playcurrent();
++	void stop();
++	void clear();
+ 
+ 	void configuration();
+ 	void mixer();

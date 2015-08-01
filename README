@@ -1,0 +1,289 @@
+
+Orpheus documentation
+    by konst, 2003-2004
+
+Contents
+--------
+
+1. Introduction
+    1.1. Creation history
+    1.2. Features overview
+    1.3. Requirements
+    1.4. Command line parameters
+	1.4.1. Remote interface
+2. User interface
+    2.1. The ESC key
+    2.2. The main screen
+    2.3. Dialogs
+    2.4. Some UI tips
+3. Configuration
+    3.1. Players issues
+4. Lynx
+    10.1. The program homepage
+    10.2. Orpheus mailing list
+    10.3. TheKonst.Net
+    10.4. Other programs I write
+
+
+1. Introduction
+---------------
+
+
+1.1. Creation history
+---------------------
+
+  I like music. I have got quite a collection of CDs, both in audio and
+mp3 formats. I used to be happy listening mp3 tracks with mpg321 running
+it directly from the command line, and for CD playing I used nice
+buttons on the front panel of my CD-ROM. With my Teac sub-woofer which I
+like very much it sounded just second to none! It's quite a pleasure to
+put a CD of "Metallica", "Cradle of filth" or "Aria", make it loud, and
+start coding some crazy things (see the links section).
+
+  But one day I noticed something wasn't ok. It bothered me that I
+couldn't combine CD and mp3 tracks in play lists, and it wasn't really
+useful to list all the mp3 file names in the command line, even with
+auto-completion. Launching X-Win just to play music was neither good
+with me. Well, I use X only to surf the Net. Finally, I came up with
+an idea to write orpheus.
+
+
+1.2. Features overview
+----------------------
+
+  The program is about playing music. Currently supported formats are
+MP3 and CD tracks. It can retrieve CDDB information for compact-discs,
+save and load playlists. A nice thing about the latter is that it's
+possible to include CD tracks into playlists along with mp3 files. Also,
+Orpheus has a nice textmode interface with configurable color schemes
+that can suit the needs of console freaks like me perfectly. Recently a
+nice interface to modify MP3 ID tags was added.
+
+
+1.3. Requirements
+-----------------
+
+  In order to build the software you'll need the ncurses library,
+version 4.2 at least. Ncurses is a CRT screen handling and optimization
+package, and can be found at http://dickey.his.com/ncurses/ncurses.html
+
+  You will also need to ghttp proxy client implementation library, which
+is a part of the GNOME project. Though you'll need it only if you want
+support for CDDB. Resides here
+    http://ftp.gnome.org/pub/GNOME/stable/sources/libghttp/
+
+  Orpheus uses the mpg321 program to play mp3s. It acts like a front-end
+to it. So if you want to play files of this format, you must have mpg321
+installed. It can be found at http://mpg321.sf.net/ A small note on this:
+mpg123 can also be used, but be attentive for it has several problems. One
+of them is that not all versions understand the -R command line
+parameters. Anyway, using of mpg321 is highly recommended.
+
+  In order to play your favourite oggs, you'll need the ogg123
+application. But if you want to be able to read and write vorbis files
+tags please get the libvorbis and libvorbisfile libraries installed on
+your box.
+
+  And to play CDs, it's useful to have a CD-ROM drive ;)
+
+
+1.4. Command line parameters
+----------------------------
+
+  There is a few command line parameters that can be used to control orpheus'
+behaviour.
+
+    --ascii, -a
+	This one tells orpheus to use ASCII characters like '-' and '+'
+	to draw windows and UI controls.
+
+    --x-titles, -xt
+	This parameter is useful in X-Win environment. Orpheus will show
+	track information in xterm title bar.
+
+    --help
+	Displays command line usage info.
+
+    --version, -v
+	Version info.
+
+    --remote, -r <cmd>
+	Remote command execution. See the following chapter for details.
+
+
+1.4.1. Remote interface
+-----------------------
+
+  With orpheus, you can control an already running instance of the program
+using its command-line interface. Assuming you have orpheus running and
+playing something somewhere in background or in another console, you can it
+to go to the next track. Everything you need to do is to run the folloing
+command:
+
+    $ orpheus -r next
+
+You'll hear the next song playing soon. Now, there is an overview on what
+can also be done using the remote command-line interface. Orpheus understands
+the following commands:
+
+    next
+	Goes to the next track.
+
+    prev
+	Plays previous track.
+
+    add <files..>
+	Adds specified files to the current play list. Please note the
+	command itself and file names must be the same parameters, e.g.
+	be taken into quote characters like this:
+
+	    $ orpheus -r "add /home/konst/mp3/song1.mpg"
+
+	Several files can be specified using this command as well:
+
+	    $ orpheus -r "add /home/konst/mp3/song1.mpg /home/konst/mp3/song2.mpg"
+
+    load <playlist>
+	Loads the speficied play list.
+
+    play <n>
+	Goes to the track number <n> in the current playlist.
+
+
+2. User interface
+-----------------
+
+  The text UI orpheus has, as well as UI of other programs for console
+I have written, is very simple. There are menus, windows, menus and
+input lines. In the bottom line of the screen there is a status bar.
+
+
+2.1. The ESC key
+----------------
+
+  This key is used for termination of input, if you wanna cancel the
+operation you wanted to perform. Say, if the "load playlist" operation
+is chosen, an input line appears. To accept your input you should Enter,
+and to cancel the ESC key is used. The only hint is that you have to press
+the ESC key twice. It's a common practice for console based UNIX
+programs (Midnight commander is a good example), because checking for only
+one ESC would spoil arrow key processing. The point is that they have
+correspond sequences that start with an ASCII#27 character which is
+actually ESC.
+
+
+2.2. The main screen
+--------------------
+
+  The main screen of orpheus consists of three parts. First is the track
+list which is situated to the left. Next is the help window which is
+used to show shortcuts. It's situated to the right and contains names of
+actions and keys that are used to activate them. And the smallest one in the
+top is the status window in which you can see current track details when
+playing something or the word "Slient".
+
+
+2.3. Dialogs
+------------
+
+  Every dialog in orpheus has a tree-like view. When I was about to
+write classes for form-based input, I remembered that there was a
+"treeview" class written by me before. So, I decided to use it for
+dialogs and was right. There was no need to re-design the whole form in
+case I need to add some controls, or so. I just add it as a node or a
+leaf it scrolls, and nothing gets spoiled. Everything really nice is
+always simple :)
+
+
+2.4. Some UI tips
+-----------------
+
+  There at some quite standard key combinations supported by orpheus I
+wanna tell you about. Here they go.
+
+    Ctrl-L
+      Redraws the screen in any place of program execution. If output of    
+    some kind of background programs or system messages spoil your screen
+    just press it so orpheus display is refreshed.
+
+    Ctrl-Y
+      In a message writing mode removes entire current line.
+
+    Ctrl-K
+      Single line edit mode.
+      Kills entire content.
+
+    Ctrl-U
+      Single line edit mode.
+      Kills a part of line to the left from cursor.
+
+    Alt-H
+      Single line edit mode.
+      Invokes history of recently entered lines.
+
+
+3. Configuration
+----------------
+
+  This is simple. All the player parameters are configurable from the
+corresponding dialog which gets invoked as soon as you press "c".
+
+
+3.1. Players issues
+-------------------
+
+  There can be situations when orpheus cannot play tracks of mp3 or ogg
+format saying it cannot run the player application. In this case, there is
+a need for an additional check whether some extra parameters are required.
+Just try to figure out how to play your stuff from the command line with
+mpg321 or ogg123 commands. Once you've done that, go to the configuration
+dialog and add the parameters you discovered to the respective player
+command. That's it.
+
+
+4. Lynx
+-------
+
+  This section contains links and references that may be of interest for
+you.
+
+
+4.1. The program homepage
+-------------------------
+
+The orpheus homepage can be found at
+    http://thekonst.net/orpheus/
+
+
+4.2. Orpheus mailing list
+-------------------------
+
+  There is a mailing list for orpheus which is used by the program
+users to discuss their ideas, bug reports, fixes, and other stuff. You
+would rather want to use it instead of direct mailing to me.
+
+  To subscribe go to the orpheus home page (URL is above) or send a
+message to orpheus-request@linuxpl.org with "subscribe" in the subject
+field. To post a message to the list, send it to orpheus@linuxpl.org after
+you subscribe. The archive can be found at http://linuxpl.org/orpheus
+
+
+4.3. TheKonst.Net
+-----------------
+
+  If you want to find out more about my recent activities, news,
+software developments and other things I'm involved in, visit my web
+site at http://thekonst.net/
+
+  It's currently available in English and Russian. Use icons in the
+right bottom corner to switch the language.
+
+
+4.4. Other programs I write
+---------------------------
+
+To find out more about my software developments use the following URL:
+    http://thekonst.net/software/
+
+There is also an "articles" section at
+    http://thekonst.net/articles/

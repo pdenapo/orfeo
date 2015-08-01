@@ -1,0 +1,113 @@
+Improve orpheus(1) based on one provided by Jose Parrella. (Closes: #335090)
+Index: orpheus-1.5/orpheus.1
+===================================================================
+--- orpheus-1.5.orig/orpheus.1	2007-02-23 17:48:28.000000000 +0900
++++ orpheus-1.5/orpheus.1	2007-02-23 18:03:39.000000000 +0900
+@@ -1,39 +1,82 @@
+-.TH ORPHEUS 1 "October 18, 2003"
+-
++.TH ORPHEUS 1 "November 18, 2005" "Version 1.5" "Orpheus Manual Pages"
+ .SH NAME
+-\fBOrpheus\fP is a text-mode menu- and window- driven audio player
+-application for CDs, Ogg, and MP3. It can retrieve CDDB information for
+-compact discs with HTTP (even through a proxy), read ID tags from MP3
+-and Ogg files, and save and load playlists. The color schemes are
+-configurable. Internal mixer controller is also provided.
+-
++orpheus \- Light-weight text mode menu- and window-driven audio player
+ .SH SYNOPSIS
+-.B "orpheus "
+-[
+-.B option
+-] ...
++.B orpheus
++.I [OPTION] ...
+ 
+ .SH DESCRIPTION
+-This manual page documents briefly the
+-.B orpheus
+-command.
++Orpheus is a light-weight text mode menu- and window-driven audio player application for CDs and files in MP3 and Vorbis OGG format, which also supports HTTP proxies, CDDB and is fully user-configurable.
+ 
+ .SH OPTIONS
+ .TP
+ \fB\-a\fR, \fB\-\-ascii\fR
+-use ascii characters to draw lines and boxes
++use ascii characters to draw windows and UI controls
+ .TP
+ \fB\-h\fR, \fB\-\-help\fR
+ display command line usage
+ .TP
++\fB\-r\fR \fI<cmd>\fR, \fB\-\-remote\fR \fI<cmd>\fR
++execute a remote command (see below for details)
++.TP
+ \fB\-v\fR, \fB\-\-version\fR
+ show the program version info
+ .TP
+ \fB\-xt\fR, \fB\-\-x\-titles\fR
+ show track information in xterm title bar
+ 
++.SH REMOTE CONTROL
++With orpheus, you can control an already running instance of the program using its command-line interface. Assuming you have orpheus running and playing something somewhere in background or in another console, you can ake it to go to the next track. Everything you need to do is to run the following command:
++
++.B    orpheus -r next
++
++You'll hear the next song playing soon. Now, there is an overview on what can also be done using the remote command-line interface. Orpheus understands the following commands:
++
++    next
++        Goes to the next track.
++
++    prev
++        Plays previous track.
++
++    add <files..>
++        Adds specified files to the current play list. Please note the
++        command itself and file names must be the same parameters, e.g.
++        be taken into quote characters like this:
++
++.I            $ orpheus -r "add /home/konst/mp3/song1.mpg"
++
++        Several files can be specified using this command as well:
++
++.I            $ orpheus -r "add /home/konst/mp3/song1.mpg /home/konst/mp3/song2.mpg"
++
++    load <playlist>
++        Loads the speficied play list.
++
++    play <n>
++        Goes to the track number <n> in the current playlist.
++.SH USUAL KEYBINDINGS
++    Ctrl-L
++    Redraws the screen in any place of program execution. If output of
++    some kind of background programs or system messages spoil your screen
++    just press it so orpheus display is refreshed.
++
++    Ctrl-Y
++      In a message writing mode removes entire current line.
++
++    Ctrl-K
++      Single line edit mode.
++      Kills entire content.
++
++    Ctrl-U
++      Single line edit mode.
++      Kills a part of line to the left from cursor.
++
++    Alt-H
++      Single line edit mode.
++      Invokes history of recently entered lines.
++
+ .SH VERSION
+-orpheus 1.3
++orpheus 1.5
+ 
+ .SH BUG REPORT
+ Report any bugs to orpheus-bugs@konst.org.ua
+@@ -41,6 +84,7 @@
+ .SH AUTHOR
+ This page and orpheus itself are written by Konstantin Klyagin
+ <konst@konst.org.ua>.
++This page is also revised by Jose Parrella and Noritada Kobayashi.
+ 
+ .SH WEB
+ http://thekonst.net/orpheus/

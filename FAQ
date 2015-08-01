@@ -1,0 +1,44 @@
+/*
+*
+* The orpheus FAQ (frequently asked questions)
+* by Konstantin Klyagin <konst@konst.org.ua>
+*
+* $Id: FAQ,v 1.1 2003/10/31 07:30:46 konst Exp $
+*
+*/
+
+Q: When running orpheus in X, I experience short blips or skips when
+switching between windows and tabs. How can I get rid of this?
+
+A: (by Justin Rebelo) All of the testing I have done has seemed to show
+that this problem is due to the way linux handles the prioritization of
+tasks. The and project (auto nice daemon) is meant to deal with such
+problems by forcing the nice levels of running tasks. Unfortunately, it
+seems only to handle the PRI (priority) levels and therefore does not
+fix the problem. If you can get the problem solved using this method,
+please email me and let me know how you did it.
+
+That said, I have found that by either giving X a higher NI (nice)
+level (of approximately five points) it will stop interfering with
+mpg123 (or 321 as the case may be). Because this will cause X to step
+aside for all sorts of applications, it is probably more desirable to
+decrease the niceness of mpg123/321 to cause it to take a high priority
+over X. Again, unfortunately, I have not been able to find any
+reasonable way to do this because only root is allowed to modify nice
+levels. Yes, I am working toward a solution.
+
+The solution. This is not the most pleasant answer, but it works. With
+any luck, you already have sudo installed. If not, it's pretty good to
+have installed anyways. Create a sudo permission to give access to
+either your user or all users, or whatever on earth you like, and give
+that account password-free access to /usr/bin/nice. Once that's done,
+all you have to do is create a small script like so:
+
+#!/bin/bash
+sudo /usr/bin/nice -n -5 /usr/bin/mpg321 -R - $1
+# EOF
+
+Make this script executable and put it somewhere in your path. I keep
+small scripts such as this in ~/bin. FINALLY, go into orpheus and
+(c)onfigure. Set the Command line setting to the name of this script.
+DONE.

@@ -1,0 +1,59 @@
+diff -ruN orig/orpheus-1.6/kkconsui-0.1/include/texteditor.h orpheus-1.6/kkconsui-0.1/include/texteditor.h
+--- orig/orpheus-1.6/kkconsui-0.1/include/texteditor.h	2002-03-05 20:03:06.000000000 +0100
++++ orpheus-1.6/kkconsui-0.1/include/texteditor.h	2008-07-02 15:37:31.000000000 +0200
+@@ -102,7 +102,6 @@
+ 	static void undorecordfree(void *p);
+ 	static void highlinefree(void *p);
+ 
+-	static int findint(void *p1, void *p2);
+ 	static int findhl(void *p1, void *p2);
+ 	static int findhighline(void *p1, void *p2);
+ 	static int sorthl(void *p1, void *p2);
+diff -ruN orig/orpheus-1.6/kkconsui-0.1/src/texteditor.cc orpheus-1.6/kkconsui-0.1/src/texteditor.cc
+--- orig/orpheus-1.6/kkconsui-0.1/src/texteditor.cc	2003-09-09 23:51:33.000000000 +0200
++++ orpheus-1.6/kkconsui-0.1/src/texteditor.cc	2008-07-02 15:37:19.000000000 +0200
+@@ -1939,10 +1939,6 @@
+     if(ur) delete ur;
+ }
+ 
+-int texteditor::findint(void *p1, void *p2) {
+-    return *(int *) p1 != (int) p2;
+-}
+-
+ int texteditor::findhighline(void *p1, void *p2) {
+     return *(int *) p1 != ((highline *) p2)->line;
+ }
+diff -ruN orig/orpheus-1.6/kkstrtext-0.1/kkstrtext.cc orpheus-1.6/kkstrtext-0.1/kkstrtext.cc
+--- orig/orpheus-1.6/kkstrtext-0.1/kkstrtext.cc	2005-02-01 01:13:24.000000000 +0100
++++ orpheus-1.6/kkstrtext-0.1/kkstrtext.cc	2008-07-02 15:42:27.000000000 +0200
+@@ -430,10 +430,6 @@
+     }
+ }
+ 
+-int intcompare(void *s1, void *s2) {
+-    return (int) s1 != (int) s2;
+-}
+-
+ string i2str(int i) {
+     char buf[64];
+     sprintf(buf, "%d", i);
+@@ -885,7 +881,7 @@
+ #ifdef HAVE_ICONV
+     iconv_t cd = iconv_open(tocs.c_str(), fromcs.c_str());
+ 
+-    if(((int) cd) != -1) {
++    if(cd != (iconv_t)-1) {
+ 	string r, text(atext);
+ 	size_t inleft, outleft, soutleft;
+ 	char *inbuf, *outbuf, *sinbuf, *soutbuf;
+diff -ruN orig/orpheus-1.6/kkstrtext-0.1/kkstrtext.h orpheus-1.6/kkstrtext-0.1/kkstrtext.h
+--- orig/orpheus-1.6/kkstrtext-0.1/kkstrtext.h	2004-11-18 00:00:38.000000000 +0100
++++ orpheus-1.6/kkstrtext-0.1/kkstrtext.h	2008-07-02 15:44:06.000000000 +0200
+@@ -40,7 +40,6 @@
+ void charpointerfree(void *p);
+ void nothingfree(void *p);
+ int stringcompare(void *s1, void *s2);
+-int intcompare(void *s1, void *s2);
+ 
+ string leadcut(const string &base, const string &delim = "\t\n\r ");
+ string trailcut(const string &base, const string &delim = "\t\n\r ");

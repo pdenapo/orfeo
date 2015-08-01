@@ -1,0 +1,148 @@
+
+0.5
+---
+
+Initial version of the software. Now we can play CDs and MP3 files, save
+and load playlists, and retrieve CDDB information. We also have a nice
+user interface and other stuff like that.
+
+1.0.0
+-----
+
+Fixed a bug that led to including . and .. items into playlists when
+whole directories were selected with the "Add MP3s" dialog.
+
+Now when the libghttp library is not found during the ./configure phase,
+the CDDB reading feature is disabled automatically.
+
+The "Eject CD" function was added.
+
+Now it's possible to control a play mode with the configuration dialog.
+There are three modes available now: "Normal", "Repeat track", and
+"Repeat list".
+
+The edit MP3 tags function was added. Now it's enough to press the "e"
+key on an MP3 playlist item to invoke the tag modification dialog.
+
+1.0.1
+-----
+
+There were some problems that didn't let the program compile well with
+gcc 3.x. Now they're fixed so that you won't have any problems with the
+new compiler anymore.
+
+The edit mp3 tags function now adds a tag record if a file is not tagged
+or incomplete.
+
+1.0.2
+-----
+
+Several cosmetic changes and improvements were made.
+
+The "Random" play mode was added. Possible to modify from the
+configuration dialog.
+
+1.0.3
+-----
+
+File selection box was improved, it became more friendly and allows
+single file selection with Enter. The previous solution with the Ins key
+was not so obvious.
+
+Applied a patch from tolix <vastol@uni.net.ua> which enabled Orpheus to
+read m3u in Windows/WinAMP format.
+
+1.1
+---
+
+This version adds support for the famous free compressed audio format
+called Ogg Vorbis! Now all the nerds or just freedom liking ones can
+enjoy the tunes. If you've got the libvorbis and libvorbisfile libraries
+you can also read and write OGG ID tags. Though you still can play the
+files if you don't.
+
+Russian encoding support in the CDDB module was fixed. Now Cyrillic song
+names are shown correctly.
+
+Some playlist load and save problems were fixed.
+
+1.2
+---
+
+A nifty feature was added, aimed to ease the playlists management. It's
+called the recent playlists directory and can be invoked with <Tab>.
+
+File manager in "add files" and "load/save playlist" dialogs used to
+behave weird, skipping over directories when going to upper directory.
+Fixed now.
+
+Sudden hangups during playing ogg files were fixed.
+
+Some bugs related to OGG tags editing were fixed.
+
+1.3
+---
+
+Space can be now used to pause playing. Skipping more playing time
+forward and backward was added, and can be done with '}' and '{' keys.
+
+Auto-play behaviour was added. Being enabled in the configuration
+dialog, it will start playing whenever possible: either on adding new
+files or loading playlists.
+
+Xterm support was improved. The window gets resized on xterm resize, and
+if you specify the "-xt" command line parameters, track titles are shown
+in the window title bar. The latter is based on the patch sent by Ciaran
+McCreesh.
+
+Internal mixer controller was added. It's possible to invoke it with the
+"m" key.
+
+1.4
+---
+
+File called ~/.orpheus/currently_playing is now created during playing of
+tracks, which makes it possible for other applications to easily find out
+which music is playing now. Centericq's LJ module already makes use of it ;)
+
+Fixed a bug in the mixer dialog, while adjusting volume on the right
+channel, completely muted the left one.
+
+When resizing terminal window in X-Window, orpheus started playing from the
+beginning of the list. Fixed.
+
+Search through play list function was implemented. It can be invoked by
+pressing the slash key.
+
+Play list sorting was implemented. There is a new option for that in the
+configuration dialog.
+
+Fixed a bug that resulted in orpheus displaying length of some MP3 tracks
+incorrectly.
+
+1.5
+---
+
+The libiconv link problem should be fixed now.
+
+Sorting option list was extended so that now it has file name, track
+name, track length and last modified (date) parameters.
+
+Bit rate and frequency are now displayed (read-only obviously) for the
+track information in the "edit tags" dialog.
+
+A running instance of orpheus can now be controlled from the command
+line using the --remote (-r) parameter.
+
+When in random play mode, the next track command (+) goes not to the
+next on the list, but to a random track.
+
+1.6
+---
+
+Conversion from utf-8 for OGG tracks was added.
+
+Support for internet radio was added. Broadcasts can now be added to the
+playlist along with the other items. For the initial stations directory,
+the presets directory from the screamer-radio project is used.
+http://screamer-radio.com/

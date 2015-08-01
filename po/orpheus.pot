@@ -1,0 +1,621 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-05-13 11:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/mp3track.cc:164
+msgid "The mp3 player application has terminated"
+msgstr ""
+
+#: src/mp3track.cc:171
+#, c-format
+msgid "MP3: %s [%02d:%02d]"
+msgstr ""
+
+#: src/mp3track.cc:366
+msgid "Cannot run the MP3 player program"
+msgstr ""
+
+#: src/mp3track.cc:368
+msgid "The MP3 player program has been launched"
+msgstr ""
+
+#: src/cdtrack.cc:100
+#, c-format
+msgid "track %d [%02d:%02d]"
+msgstr ""
+
+#: src/cdtrack.cc:242
+msgid "Reading CD tracks.."
+msgstr ""
+
+#: src/cdtrack.cc:306
+#, c-format
+msgid "Done: read %d CD tracks"
+msgstr ""
+
+#: src/cdtrack.cc:309
+msgid "No CD in the drive!"
+msgstr ""
+
+#: src/cdtrack.cc:404
+msgid "Getting the CDDB data.."
+msgstr ""
+
+#: src/cdtrack.cc:438
+msgid "Found! Let's read the tracks.."
+msgstr ""
+
+#: src/cdtrack.cc:467
+msgid "CDDB info has been fetched"
+msgstr ""
+
+#: src/cdtrack.cc:470
+msgid "Failed to fetch track titles"
+msgstr ""
+
+#: src/orpheusconf.cc:177
+msgid "Normal"
+msgstr ""
+
+#: src/orpheusconf.cc:178
+msgid "Repeat track"
+msgstr ""
+
+#: src/orpheusconf.cc:179
+msgid "Repeat play list"
+msgstr ""
+
+#: src/orpheusconf.cc:180
+msgid "Random"
+msgstr ""
+
+#: src/orpheusconf.cc:188
+msgid "by File Name"
+msgstr ""
+
+#: src/orpheusconf.cc:189
+msgid "by Track Name"
+msgstr ""
+
+#: src/orpheusconf.cc:190
+msgid "by Track Length"
+msgstr ""
+
+#: src/orpheusconf.cc:191
+msgid "by Last Modified"
+msgstr ""
+
+#: src/orpheusconf.cc:192
+msgid "no Sorting"
+msgstr ""
+
+#: src/uitext.cc:212
+msgid "Orpheus started"
+msgstr ""
+
+#: src/uitext.cc:335
+msgid "Silent"
+msgstr ""
+
+#: src/uitext.cc:402
+msgid "Start/Stop"
+msgstr ""
+
+#: src/uitext.cc:403
+msgid "Pause"
+msgstr ""
+
+#: src/uitext.cc:404
+msgid "Skip ahead/back"
+msgstr ""
+
+#: src/uitext.cc:405
+msgid "Add/Remove item"
+msgstr ""
+
+#: src/uitext.cc:406
+msgid "Add broadcast"
+msgstr ""
+
+#: src/uitext.cc:407
+msgid "Next/Prev track"
+msgstr ""
+
+#: src/uitext.cc:408
+msgid "Move Up/Down"
+msgstr ""
+
+#: src/uitext.cc:409
+msgid "Edit tags"
+msgstr ""
+
+#: src/uitext.cc:410
+msgid "Search track"
+msgstr ""
+
+#: src/uitext.cc:414
+msgid "Load/Save list"
+msgstr ""
+
+#: src/uitext.cc:415
+msgid "Recent playlists"
+msgstr ""
+
+#: src/uitext.cc:416
+msgid "Clear list"
+msgstr ""
+
+#: src/uitext.cc:417
+msgid "Read/Eject CD"
+msgstr ""
+
+#: src/uitext.cc:421
+msgid "Config/Mixer"
+msgstr ""
+
+#: src/uitext.cc:422
+msgid "Quit"
+msgstr ""
+
+#: src/uitext.cc:470 src/uitext.cc:1022
+msgid " [ <Ins> select; <Space> confirm; <Esc> cancel ] "
+msgstr ""
+
+#: src/uitext.cc:492
+msgid "yes"
+msgstr ""
+
+#: src/uitext.cc:492
+msgid "no"
+msgstr ""
+
+#: src/uitext.cc:520
+msgid " Orpheus configuration "
+msgstr ""
+
+#: src/uitext.cc:529 src/uitext.cc:1115
+msgid "Change"
+msgstr ""
+
+#: src/uitext.cc:529 src/uitext.cc:1238
+msgid "Done"
+msgstr ""
+
+#: src/uitext.cc:539
+msgid " MP3 player "
+msgstr ""
+
+#: src/uitext.cc:540 src/uitext.cc:544 src/uitext.cc:547
+#, c-format
+msgid " Command line : %s "
+msgstr ""
+
+#: src/uitext.cc:541
+#, c-format
+msgid " Russian recoding for MP3 tags : %s "
+msgstr ""
+
+#: src/uitext.cc:543
+msgid " OGG player "
+msgstr ""
+
+#: src/uitext.cc:546
+msgid " Radio "
+msgstr ""
+
+#: src/uitext.cc:549
+#, c-format
+msgid " Presets URL : %s "
+msgstr ""
+
+#: src/uitext.cc:552
+msgid " CD player "
+msgstr ""
+
+#: src/uitext.cc:553 src/uitext.cc:556
+#, c-format
+msgid " Device : %s "
+msgstr ""
+
+#: src/uitext.cc:555
+msgid " Mixer "
+msgstr ""
+
+#: src/uitext.cc:559
+msgid " CDDB support "
+msgstr ""
+
+#: src/uitext.cc:560
+#, c-format
+msgid " Auto-fetch CD info : %s "
+msgstr ""
+
+#: src/uitext.cc:561
+#, c-format
+msgid " HTTP proxy : %s "
+msgstr ""
+
+#: src/uitext.cc:564
+msgid " Miscellaneous "
+msgstr ""
+
+#: src/uitext.cc:565
+#, c-format
+msgid " Auto-save current playlist : %s "
+msgstr ""
+
+#: src/uitext.cc:566
+#, c-format
+msgid " Play mode : %s "
+msgstr ""
+
+#: src/uitext.cc:567
+#, c-format
+msgid " Auto-play: start playing whenever possible : %s "
+msgstr ""
+
+#: src/uitext.cc:568
+#, c-format
+msgid " Sort track list : %s "
+msgstr ""
+
+#: src/uitext.cc:571
+#, c-format
+msgid " Sort direction : %s "
+msgstr ""
+
+#: src/uitext.cc:579
+msgid "MP3 player command line: "
+msgstr ""
+
+#: src/uitext.cc:585
+msgid "CD device filename: "
+msgstr ""
+
+#: src/uitext.cc:591
+msgid "HTTP proxy: "
+msgstr ""
+
+#: src/uitext.cc:613
+msgid "OGG player command line: "
+msgstr ""
+
+#: src/uitext.cc:616
+msgid "Mixer device filename: "
+msgstr ""
+
+#: src/uitext.cc:619
+msgid "Stream player command line: "
+msgstr ""
+
+#: src/uitext.cc:622
+msgid "Radio stations presets file: "
+msgstr ""
+
+#: src/uitext.cc:682
+msgid "Cannot open the mixer device: "
+msgstr ""
+
+#: src/uitext.cc:687
+msgid "Volume"
+msgstr ""
+
+#: src/uitext.cc:688
+msgid "Bass"
+msgstr ""
+
+#: src/uitext.cc:689
+msgid "Treble"
+msgstr ""
+
+#: src/uitext.cc:690
+msgid "Synth"
+msgstr ""
+
+#: src/uitext.cc:691
+msgid "PCM"
+msgstr ""
+
+#: src/uitext.cc:692
+msgid "Speaker"
+msgstr ""
+
+#: src/uitext.cc:693
+msgid "Line"
+msgstr ""
+
+#: src/uitext.cc:694
+msgid "Microphone"
+msgstr ""
+
+#: src/uitext.cc:695
+msgid "CD"
+msgstr ""
+
+#: src/uitext.cc:696
+msgid "Mix"
+msgstr ""
+
+#: src/uitext.cc:697
+msgid "PCM 2"
+msgstr ""
+
+#: src/uitext.cc:698
+msgid "Record"
+msgstr ""
+
+#: src/uitext.cc:699
+msgid "Input"
+msgstr ""
+
+#: src/uitext.cc:700
+msgid "Output"
+msgstr ""
+
+#: src/uitext.cc:701
+msgid "Line 1"
+msgstr ""
+
+#: src/uitext.cc:702
+msgid "Line 2"
+msgstr ""
+
+#: src/uitext.cc:703
+msgid "Line 3"
+msgstr ""
+
+#: src/uitext.cc:704
+msgid "Digital 1"
+msgstr ""
+
+#: src/uitext.cc:705
+msgid "Digital 2"
+msgstr ""
+
+#: src/uitext.cc:706
+msgid "Digital 3"
+msgstr ""
+
+#: src/uitext.cc:707
+msgid "Phone In"
+msgstr ""
+
+#: src/uitext.cc:708
+msgid "Phone Out"
+msgstr ""
+
+#: src/uitext.cc:709
+msgid "Video"
+msgstr ""
+
+#: src/uitext.cc:710
+msgid "Radio"
+msgstr ""
+
+#: src/uitext.cc:711
+msgid "Monitor"
+msgstr ""
+
+#: src/uitext.cc:726
+msgid " Mixer settings "
+msgstr ""
+
+#: src/uitext.cc:734
+msgid "Lower"
+msgstr ""
+
+#: src/uitext.cc:734
+msgid "Raise"
+msgstr ""
+
+#: src/uitext.cc:756
+#, c-format
+msgid " %s : <%s> "
+msgstr ""
+
+#: src/uitext.cc:818
+msgid "Playlist to save: "
+msgstr ""
+
+#: src/uitext.cc:824
+msgid "Playlist to load: "
+msgstr ""
+
+#: src/uitext.cc:959
+msgid "Look for: "
+msgstr ""
+
+#: src/uitext.cc:1025
+msgid " [ <Enter> select; <Esc> cancel ] "
+msgstr ""
+
+#: src/uitext.cc:1106
+msgid " Edit ID tags "
+msgstr ""
+
+#: src/uitext.cc:1115
+msgid "Save"
+msgstr ""
+
+#: src/uitext.cc:1131
+msgid " File name "
+msgstr ""
+
+#: src/uitext.cc:1134
+msgid " Parameters "
+msgstr ""
+
+#: src/uitext.cc:1140
+msgid " ID3 "
+msgstr ""
+
+#: src/uitext.cc:1141
+#, c-format
+msgid " Artist : %s "
+msgstr ""
+
+#: src/uitext.cc:1142
+#, c-format
+msgid " Album : %s "
+msgstr ""
+
+#: src/uitext.cc:1143
+#, c-format
+msgid " Title : %s "
+msgstr ""
+
+#: src/uitext.cc:1144
+#, c-format
+msgid " Year : %s "
+msgstr ""
+
+#: src/uitext.cc:1145
+#, c-format
+msgid " Comment : %s "
+msgstr ""
+
+#: src/uitext.cc:1153
+msgid "Artist name: "
+msgstr ""
+
+#: src/uitext.cc:1156
+msgid "Album name: "
+msgstr ""
+
+#: src/uitext.cc:1159
+msgid "Track title: "
+msgstr ""
+
+#: src/uitext.cc:1162
+msgid "Year: "
+msgstr ""
+
+#: src/uitext.cc:1165
+msgid "Track comment: "
+msgstr ""
+
+#: src/uitext.cc:1188
+msgid " Recent Lists [ <Del> remove; <Enter> load ] "
+msgstr ""
+
+#: src/uitext.cc:1229
+msgid " Select radio broadcasts "
+msgstr ""
+
+#: src/uitext.cc:1238
+msgid "Add URL"
+msgstr ""
+
+#: src/uitext.cc:1238
+msgid "Mark/Unmark"
+msgstr ""
+
+#: src/uitext.cc:1288
+msgid "Broadcast URL: "
+msgstr ""
+
+#: src/uitext.cc:1331
+msgid "Usage: "
+msgstr ""
+
+#: src/uitext.cc:1333
+msgid ""
+"  --ascii, -a              use ASCII characters for windows and UI controls"
+msgstr ""
+
+#: src/uitext.cc:1334
+msgid "  --x-titles, -xt          show track information in xterm title bar"
+msgstr ""
+
+#: src/uitext.cc:1335
+msgid ""
+"  --remote, -r <cmd>       execute a remote command (see README for details)"
+msgstr ""
+
+#: src/uitext.cc:1336
+msgid "  --help                   display this stuff"
+msgstr ""
+
+#: src/uitext.cc:1337
+msgid "  --version, -v            show the program version info"
+msgstr ""
+
+#: src/uitext.cc:1339
+msgid "Report bugs to <orpheus-bugs@konst.org.ua>."
+msgstr ""
+
+#: src/playlist.cc:67
+msgid "Unable to save the playlist file!"
+msgstr ""
+
+#: src/playlist.cc:83
+#, c-format
+msgid "Loading tracks from %s.."
+msgstr ""
+
+#: src/playlist.cc:150
+msgid "Playlist loaded successfully"
+msgstr ""
+
+#: src/playlist.cc:155
+msgid "Unable to open the playlist file!"
+msgstr ""
+
+#: src/oggtrack.cc:167
+msgid "The ogg player application has terminated"
+msgstr ""
+
+#: src/oggtrack.cc:171
+#, c-format
+msgid "OGG: %s [%02d:%02d]"
+msgstr ""
+
+#: src/oggtrack.cc:266
+msgid "Cannot run the OGG player program"
+msgstr ""
+
+#: src/oggtrack.cc:268
+msgid "The OGG player program has been launched"
+msgstr ""
+
+#: src/streamtrack.cc:158
+msgid "The stream player application has terminated"
+msgstr ""
+
+#: src/streamtrack.cc:218
+msgid "Cannot run the stream player program"
+msgstr ""
+
+#: src/streamtrack.cc:220
+msgid "The stream player program has been launched"
+msgstr ""
+
+#: src/streamtrack.cc:300
+msgid "Fetching the presets XML file.."
+msgstr ""
+
+#: src/streamtrack.cc:304
+msgid "Internet Radio presets file has been fetched"
+msgstr ""
+
+#: src/streamtrack.cc:340
+msgid "Unable to parse the presets file"
+msgstr ""
+
+#: src/streamtrack.cc:344
+msgid "Internet Radio presets fetch failed"
+msgstr ""

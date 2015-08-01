@@ -1,0 +1,32 @@
+Fix '-r next' and '-r prev' when not playing. (Closes: #334964)
+Index: orpheus-1.5/src/uitext.cc
+===================================================================
+--- orpheus-1.5.orig/src/uitext.cc	2004-02-17 02:18:21.000000000 +0100
++++ orpheus-1.5/src/uitext.cc	2005-10-21 09:06:59.000000000 +0200
+@@ -131,7 +131,12 @@
+ 	playtrack(*(plist.begin()+k));
+ 
+     } else {
+-	OrpheusPlayList::iterator nt = find(plist.begin(), plist.end(), currenttrack);
++	OrpheusPlayList::iterator nt;
++	if ( !currenttrack ) {
++		nt = plist.begin()+trackm.getpos();
++	} else {
++		nt = find(plist.begin(), plist.end(), currenttrack);
++	}
+ 
+ 	if(nt != plist.end()) {
+ 	    if(nt != plist.end() && ++nt != plist.end()) {
+@@ -148,7 +153,11 @@
+ void OrpheusTextUI::prevtrack() {
+     OrpheusPlayList::iterator nt;
+ 
+-    nt = find(plist.begin(), plist.end(), currenttrack);
++    if ( !currenttrack ) {
++    	nt = plist.begin() + trackm.getpos();
++    } else {
++    	nt = find(plist.begin(), plist.end(), currenttrack);
++    }
+ 
+     if(nt != plist.end()) {
+ 	if(nt != plist.begin()) {
