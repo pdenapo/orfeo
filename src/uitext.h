@@ -55,6 +55,9 @@ class OrpheusTextUI : public OrpheusUserInterface {
 	void playtrack(track *t);
 	void cleartrack();
 	void play(int n);
+	void playcurrent();
+	void stop();
+	void clear();
 
 	void configuration();
 	void mixer();

@@ -30,6 +30,7 @@
 #include "kkstrtext.h"
 
 #include <fcntl.h>
+#include <unistd.h>
 #include <sys/ioctl.h>
 #include <sys/wait.h>
 #include <sys/stat.h>

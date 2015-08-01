@@ -1,5 +1,6 @@
-AC_INIT(aclocal.m4)
-AM_INIT_AUTOMAKE(kkconsui, 0.1)
+AC_INIT([kkconsui], [0.1])
+AC_CONFIG_SRCDIR([src/texteditor.cc])
+AM_INIT_AUTOMAKE
 
 AC_CANONICAL_HOST
 
@@ -18,7 +19,6 @@ AC_ARG_ENABLE(locales-fix,
         [if test "$enableval" = "yes"; then
                 AC_DEFINE(LOCALES_HACK)
         fi])
-
 
 ###	use option --with-fribidi to compile with fribidi support
 AC_ARG_WITH(fribidi,

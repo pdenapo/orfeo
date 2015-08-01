@@ -19,6 +19,9 @@ class OrpheusUserInterface {
 	virtual void doadd(const string &aitem) = 0;
 	virtual void loadplaylist(const string &lname) = 0;
 	virtual void play(int n) = 0;
+	virtual void playcurrent() = 0;
+	virtual void stop() = 0;
+	virtual void clear() = 0;
 
 	virtual void commandline(int argc, char **argv) { }
 	virtual void status(const string &s) { }

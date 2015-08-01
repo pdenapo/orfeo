@@ -60,6 +60,15 @@ void sighandler(int sig) {
 	    } else if(tok == "play") {
 		ui.play(atoi(cmd.c_str()));
 
+	    } else if(tok == "stop") {
+		ui.stop();
+
+	    } else if(tok == "start") {
+		ui.playcurrent();
+
+	    } else if(tok == "clear") {
+		ui.clear();
+
 	    }
 
 	    f.close();

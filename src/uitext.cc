@@ -121,8 +121,8 @@ void OrpheusTextUI::cleartrack() {
 }
 
 void OrpheusTextUI::play(int n) {
-    if(n > 0 && n < plist.size())
-	playtrack(*(plist.begin() + n + 1));
+    if(n > 0 && n <= plist.size())
+	playtrack(*(plist.begin() + n - 1));
 }
 
 void OrpheusTextUI::nexttrack() {
@@ -132,7 +132,12 @@ void OrpheusTextUI::nexttrack() {
 	playtrack(*(plist.begin()+k));
 
     } else {
-	OrpheusPlayList::iterator nt = find(plist.begin(), plist.end(), currenttrack);
+	OrpheusPlayList::iterator nt;
+	if ( !currenttrack ) {
+		nt = plist.begin()+trackm.getpos();
+	} else {
+		nt = find(plist.begin(), plist.end(), currenttrack);
+	}
 
 	if(nt != plist.end()) {
 	    if(nt != plist.end() && ++nt != plist.end()) {
@@ -149,7 +154,11 @@ void OrpheusTextUI::nexttrack() {
 void OrpheusTextUI::prevtrack() {
     OrpheusPlayList::iterator nt;
 
-    nt = find(plist.begin(), plist.end(), currenttrack);
+    if ( !currenttrack ) {
+    	nt = plist.begin() + trackm.getpos();
+    } else {
+    	nt = find(plist.begin(), plist.end(), currenttrack);
+    }
 
     if(nt != plist.end()) {
 	if(nt != plist.begin()) {
@@ -159,6 +168,30 @@ void OrpheusTextUI::prevtrack() {
 	    cleartrack();
 	    update();
 	}
+    }
+}
+
+void OrpheusTextUI::stop() {
+	cleartrack();
+	update();
+}
+void OrpheusTextUI::clear() {
+	cleartrack();
+	plist.clear();
+	update();
+}
+void OrpheusTextUI::playcurrent() {
+    OrpheusPlayList::iterator nt;
+    if ( !currenttrack ) {
+	nt = plist.begin() + trackm.getpos();
+    } else {
+	nt = find(plist.begin(), plist.end(), currenttrack);
+    }
+    if (nt != plist.end()) {
+    	playtrack(*nt);
+    } else {
+	cleartrack();
+	update();
     }
 }
 

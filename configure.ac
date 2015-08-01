@@ -1,5 +1,6 @@
-AC_INIT(aclocal.m4)
-AM_INIT_AUTOMAKE(orpheus, 1.6)
+AC_INIT([orpheus], [1.6])
+AC_CONFIG_SRCDIR([src/main.cc])
+AM_INIT_AUTOMAKE
 
 AC_CANONICAL_HOST
 
@@ -7,6 +8,7 @@ AC_PROG_CC
 AC_PROG_CXX
 AC_PROG_CPP
 AC_PROG_RANLIB
+AC_USE_SYSTEM_EXTENSIONS
 
 AM_CONFIG_HEADER(config.h)
 
@@ -44,6 +46,8 @@ AM_ICONV_LINK
 LIBS="$LIBS $LIBICONV"
 
 ALL_LINGUAS="ru ca"
+
+
 AM_GNU_GETTEXT
 AC_CONFIG_SUBDIRS(kkstrtext-0.1 kkconsui-0.1)
 AC_OUTPUT(Makefile src/Makefile src/abstract/Makefile po/Makefile.in intl/Makefile)
