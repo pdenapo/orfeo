@@ -13,6 +13,7 @@
 #include <config.h>
 
 #ifdef HAVE_LIBVORBIS
+#ifdef HAVE_LIBOGG
 
 #ifdef __cplusplus
 extern "C" {
@@ -61,6 +62,7 @@ extern char *   vcedit_error(vcedit_state *state);
 }
 #endif 
 
+#endif
 #endif
 
 #endif /* __VCEDIT_H */

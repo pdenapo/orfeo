@@ -40,6 +40,9 @@ AC_CHECK_LIB(vorbis, vorbis_synthesis_headerin,,
     
 AC_CHECK_LIB(vorbisfile, ov_open,,
     AC_MSG_WARN(libvorbis not found - the support for OGG files is disabled))
+    
+AC_CHECK_LIB(ogg, ogg_stream_packetout,,
+    AC_MSG_WARN(libvorbis not found - the support for OGG files is disabled,))
 
 AM_ICONV_LINK
 

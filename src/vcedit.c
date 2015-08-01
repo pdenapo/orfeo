@@ -12,6 +12,7 @@
 #include <config.h>
 
 #ifdef HAVE_LIBVORBIS
+#ifdef HAVE_LIBOGG
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -501,3 +502,5 @@ cleanup:
 }
 
 #endif
+#endif
+

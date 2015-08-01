@@ -5759,6 +5759,55 @@ $as_echo "$as_me: WARNING: libvorbis not found - the support for OGG files is di
 fi
 
 
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for ogg_stream_packetout in -logg" >&5
+$as_echo_n "checking for ogg_stream_packetout in -logg... " >&6; }
+if ${ac_cv_lib_ogg_ogg_stream_packetout+:} false; then :
+  $as_echo_n "(cached) " >&6
+else
+  ac_check_lib_save_LIBS=$LIBS
+LIBS="-logg  $LIBS"
+cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+
+/* Override any GCC internal prototype to avoid an error.
+   Use char because int might match the return type of a GCC
+   builtin and then its argument prototype would still apply.  */
+#ifdef __cplusplus
+extern "C"
+#endif
+char ogg_stream_packetout ();
+int
+main ()
+{
+return ogg_stream_packetout ();
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_c_try_link "$LINENO"; then :
+  ac_cv_lib_ogg_ogg_stream_packetout=yes
+else
+  ac_cv_lib_ogg_ogg_stream_packetout=no
+fi
+rm -f core conftest.err conftest.$ac_objext \
+    conftest$ac_exeext conftest.$ac_ext
+LIBS=$ac_check_lib_save_LIBS
+fi
+{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_ogg_ogg_stream_packetout" >&5
+$as_echo "$ac_cv_lib_ogg_ogg_stream_packetout" >&6; }
+if test "x$ac_cv_lib_ogg_ogg_stream_packetout" = xyes; then :
+  cat >>confdefs.h <<_ACEOF
+#define HAVE_LIBOGG 1
+_ACEOF
+
+  LIBS="-logg $LIBS"
+
+else
+  { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: libvorbis not found - the support for OGG files is disabled" >&5
+$as_echo "$as_me: WARNING: libvorbis not found - the support for OGG files is disabled" >&2;}
+fi
+
+
 
       if test "X$prefix" = "XNONE"; then
     acl_final_prefix="$ac_default_prefix"
