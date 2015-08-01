@@ -1,6 +1,7 @@
 
 Todo:
 * fix all compilation warnings.
+* Spanish translation.
 * Restore cdbs support ?
 * Support flac ?
 
