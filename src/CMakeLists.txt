@@ -16,3 +16,4 @@ set (EXTRA_LIBS ${EXTRA_LIBS} kkconsui kkstrtext ${CURSES_LIBRARIES} )
 
 target_link_libraries (orpheus  ${EXTRA_LIBS})
 
+install (TARGETS orpheus DESTINATION bin) 
