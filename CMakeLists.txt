@@ -23,6 +23,10 @@ CHECK_INCLUDE_FILES (sys/soundcard.h HAVE_SYS_SOUNDCARD_H)
 CHECK_INCLUDE_FILES (soundcard.h HAVE_SOUNDCARD_H) 
 CHECK_INCLUDE_FILES (machine/soundcard.h HAVE_MACHINE_SOUNDCARD_H)
 
+find_package(LibXml2)
+IF (LIBXML2_FOUND)
+ SET(HAVE_LIBXML2 1)
+ENDIF (LIBXL2_FOUND)
 
 # configure a header file to pass some of the CMake settings
 # to the source code

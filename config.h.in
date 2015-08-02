@@ -43,7 +43,7 @@
 #undef HAVE_LIBVORBISFILE
 
 /* use libxml2 */
-#undef HAVE_LIBXML2
+#cmakedefine HAVE_LIBXML2
 
 /* Define to 1 if you have the <machine/soundcard.h> header file. */
 #cmakedefine HAVE_MACHINE_SOUNDCARD_H
