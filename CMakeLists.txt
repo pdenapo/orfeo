@@ -11,6 +11,7 @@ cmake_minimum_required(VERSION 3.0)
 add_subdirectory(kkstrtext-0.1) 
 add_subdirectory(kkconsui-0.1)
 add_subdirectory(src)
+add_subdirectory(po)
 
 INCLUDE (CheckIncludeFiles)
 CHECK_INCLUDE_FILES (sys/soundcard.h HAVE_SYS_SOUNDCARD_H) 
