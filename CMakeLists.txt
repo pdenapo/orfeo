@@ -28,6 +28,12 @@ IF (LIBXML2_FOUND)
  SET(HAVE_LIBXML2 1)
 ENDIF (LIBXML2_FOUND)
 
+
+
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
+message(STATUS "CMAKE_MODULE_PATH is" ${CMAKE_MODULE_PATH})
+find_package(Vorbis)
+
 # configure a header file to pass some of the CMake settings
 # to the source code
 configure_file (
