@@ -21,7 +21,6 @@
 * USA
 *
 */
-
 #include "uitext.h"
 #include "playlist.h"
 #include "cdtrack.h"
@@ -239,7 +238,7 @@ void OrpheusTextUI::redraw() {
     attrset(schemer[Status]);
     mvhline(0, 0, ' ', COLS);
 
-    kwriteatf(1, 0, schemer[Status], "%s %s", ruscase(PACKAGE, "toupper").c_str(), VERSION);
+    kwriteatf(1, 0, schemer[Status], "%s %s", ruscase(PACKAGE, "toupper").c_str(), PACKAGE_VERSION);
     kwriteatf(COLS-url.size()-1, 0, schemer[Status], "%s", url.c_str());
 
     status(_("Orpheus started"));
@@ -1401,7 +1400,7 @@ void OrpheusTextUI::commandline(int argc, char **argv) {
 	    exit(0);
 
 	} else if(arg == "--version" || arg == "-v") {
-	    cout << PACKAGE << " " << VERSION << endl
+	    cout << PACKAGE << " " << PACKAGE_VERSION << endl
 		<< "Written by Konstantin Klyagin." << endl << endl
 		<< "This is free software; see the source for copying conditions.  There is NO" << endl
 		<< "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE." << endl;
