@@ -233,7 +233,8 @@ void OrpheusTextUI::init() {
 }
 
 void OrpheusTextUI::redraw() {
-    string url = "http://thekonst.net/orpheus/";
+    // string url = "http://thekonst.net/orpheus/" 
+    string url = "http://github.com/pdenapo/orpheus_still_lives";
 
     attrset(schemer[Status]);
     mvhline(0, 0, ' ', COLS);
@@ -1402,6 +1403,7 @@ void OrpheusTextUI::commandline(int argc, char **argv) {
 	} else if(arg == "--version" || arg == "-v") {
 	    cout << PACKAGE << " " << PACKAGE_VERSION << endl
 		<< "Written by Konstantin Klyagin." << endl << endl
+		<< "Modified by Pablo De Nápoli." << endl << endl
 		<< "This is free software; see the source for copying conditions.  There is NO" << endl
 		<< "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE." << endl;
 	    exit(0);
