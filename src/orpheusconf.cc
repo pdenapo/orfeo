@@ -60,6 +60,7 @@ void OrpheusConfiguration::load() {
 
 	    if(param == "mp3player") mp3player = buf; else
 	    if(param == "oggplayer") oggplayer = buf; else
+	    if(param == "flaclayer") oggplayer = buf; else
 	    if(param == "streamplayer") oggplayer = buf; else
 	    if(param == "cddev") cddev = buf; else
 	    if(param == "mixerdev") mixerdev = buf; else
@@ -95,6 +96,7 @@ void OrpheusConfiguration::save() const {
 	f
 	    << "mp3player" << "\t" << mp3player << endl
 	    << "oggplayer" << "\t" << oggplayer << endl
+	    << "flacplayer" << "\t" << oggplayer << endl
 	    << "streamplayer" << "\t" << streamplayer << endl
 	    << "cddev" << "\t" << cddev << endl
 	    << "mixerdev" << "\t" << mixerdev << endl

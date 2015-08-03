@@ -46,7 +46,7 @@ ENUM_PLUSPLUS(SortOrder)
 
 class OrpheusConfiguration {
     private:
-	string mp3player, oggplayer, streamplayer, cddev, mixerdev, proxy, dname, radioxml;
+	string mp3player, oggplayer, flacplayer,  streamplayer, cddev, mixerdev, proxy, dname, radioxml;
 	bool cdautofetch, russian, autosavepl, autoplay, sortasc;
 	PlayMode playmode;
 	SortOrder sortorder;
@@ -65,6 +65,9 @@ class OrpheusConfiguration {
 
 	string getoggplayer() const { return oggplayer; }
 	void setoggplayer(const string &aoggplayer) { oggplayer = aoggplayer; }
+
+	string getflacplayer() const { return flacplayer; }
+	void setflaclayer(const string &aflacplayer) { flacplayer = aflacplayer; }
 
 	string getstreamplayer() const { return streamplayer; }
 	void setstreamplayer(const string &astreamplayer) { streamplayer = astreamplayer; }
