@@ -10,9 +10,9 @@ systems. I have started from the Debian sources and added the files
 requiered to build the Debian package, since I am a Debian user, and I want 
 to be able to build de Debian package from the sources.
 
-The main differencies with the original orpheus programs are:
+The main differencies with the original orpheus program are:
 
-* Flac support using ogg123 (it was really easy to add it since almost 
+* Flac support using ogg123 (It was really easy to add it since almost 
 the same code for ogg files worked!)
 * We use cmake for building instead of autotools (wich are really insanely 
 complex!). This makes development easier.
