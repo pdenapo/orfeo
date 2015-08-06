@@ -8,7 +8,7 @@ add_executable(orpheus  cdtrack.cc cdtrack.h main.cc mixerctl.cc
 	       oggtrack.h orpheusconf.cc orpheusconf.h playlist.cc 
 	       playlist.h streamtrack.cc streamtrack.h uitext.cc 
 	       uitext.h vcedit.c vcedit.h abstract/track.h
-	       abstract/userinterface.h)
+	       abstract/userinterface.h flactrack.h flactrack.cc)
 
 find_package(Curses)
 

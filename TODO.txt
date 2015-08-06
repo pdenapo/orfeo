@@ -3,8 +3,9 @@ Todo:
 * fix all compilation warnings.
 * Spanish translation.
 * Restore cdbs support ?
-* Support flac ?
+* Clean up flac support (remove edit tags feature copied form oggtrack.cc)
 
 Done:
+* Support flac (via ogg123)
 * Update automake
 * Build the debian package with the patches included into the source.

@@ -67,7 +67,7 @@ class OrpheusConfiguration {
 	void setoggplayer(const string &aoggplayer) { oggplayer = aoggplayer; }
 
 	string getflacplayer() const { return flacplayer; }
-	void setflaclayer(const string &aflacplayer) { flacplayer = aflacplayer; }
+	void setflacplayer(const string &aflacplayer) { flacplayer = aflacplayer; }
 
 	string getstreamplayer() const { return streamplayer; }
 	void setstreamplayer(const string &astreamplayer) { streamplayer = astreamplayer; }

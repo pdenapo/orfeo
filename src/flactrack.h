@@ -1,31 +1,28 @@
-#ifndef __MP3TRACK_H__
-#define __MP3TRACK_H__
+#ifndef __FLACTRACK_H__
+#define __FLACTRACK_H__
 
 #include "abstract/track.h"
 
-class mp3track : public idtrack {
+class flactrack : public idtrack {
     private:
-	int length;
+	bool paused;
 
-	mutable bool aterminated;
-	mutable int currentpos;
+	mutable int length, currentpos;
+	mutable string sbuffer;
 
 	void readtag();
-	bool ismpegheader(unsigned char *h) const;
-
-	static void runplayer();
-	static void sendcommand(const char *fmt, ...);
+	void runplayer();
 
     public:
-	mp3track(const string &afname);
-	~mp3track();
+	flactrack(const string &afname);
+	~flactrack();
 
 	void play();
 	void pause();
 	void stop();
 
-	void fwd(bool big = false);
-	void rwd(bool big = false);
+	void fwd(bool big = false) {}
+	void rwd(bool big = false) {}
 
 	bool terminated() const;
 
@@ -35,8 +32,6 @@ class mp3track : public idtrack {
 
 	void setidtags(string &aartist, string &atitle, string &aalbum, string &ayear, string &acomment);
 	void toplaylist(ofstream &f) const;
-
-	static void kill();
 };
 
 #endif

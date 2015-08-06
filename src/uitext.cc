@@ -26,6 +26,7 @@
 #include "cdtrack.h"
 #include "mp3track.h"
 #include "oggtrack.h"
+#include "flactrack.h"
 #include "streamtrack.h"
 #include "orpheusconf.h"
 #include "mixerctl.h"
@@ -461,9 +462,11 @@ void OrpheusTextUI::showhelp() {
 }
 
 void OrpheusTextUI::addtrackf(const string &fname) {
-    string ext = up(fname.substr(fname.size()-4));
+    std::size_t dot_position= fname.find_last_of ("."); 
+    string ext = up(fname.substr(dot_position));
     if(ext == ".MP3") plist.push_back(new mp3track(fname)); else
     if(ext == ".OGG") plist.push_back(new oggtrack(fname)); else
+    if(ext == ".FLAC") plist.push_back(new flactrack(fname)); else
     if(fname.find("://") != -1) plist.push_back(new streamtrack(fname));
 }
 
@@ -532,6 +535,7 @@ void OrpheusTextUI::configuration() {
 
     string mp3player = conf.getmp3player();
     string oggplayer = conf.getoggplayer();
+    string flacplayer = conf.getflacplayer();
     string streamplayer = conf.getstreamplayer();
     string cddev = conf.getcddevice();
     string mixerdev = conf.getmixerdevice();
@@ -575,6 +579,9 @@ void OrpheusTextUI::configuration() {
 
 	i = t.addnode(_(" OGG player "));
 	t.addleaff(i, 0, 50, _(" Command line : %s "), oggplayer.c_str());
+	
+	i = t.addnode(_(" FLAC player "));
+	t.addleaff(i, 0, 51, _(" Command line : %s "), flacplayer.c_str());
 
 	i = t.addnode(_(" Radio "));
 	t.addleaff(i, 0, 70, _(" Command line : %s "), streamplayer.c_str());
@@ -645,6 +652,9 @@ void OrpheusTextUI::configuration() {
 		    case 50:
 			oggplayer = inputstr(_("OGG player command line: "), oggplayer);
 			break;
+                    case 51:
+			flacplayer = inputstr(_("FLAC player command line: "), flacplayer);
+			break;
 		    case 60:
 			oggplayer = inputstr(_("Mixer device filename: "), mixerdev);
 			break;
@@ -658,7 +668,8 @@ void OrpheusTextUI::configuration() {
 	    } else {
 		conf.setmp3player(mp3player);
 		conf.setoggplayer(oggplayer);
-		conf.setstreamplayer(oggplayer);
+		conf.setstreamplayer(streamplayer);
+		conf.setflacplayer(flacplayer);
 		conf.setcddevice(cddev);
 		conf.setmixerdevice(mixerdev);
 		conf.setproxy(proxy);

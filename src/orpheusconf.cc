@@ -34,7 +34,7 @@ OrpheusConfiguration conf;
 
 OrpheusConfiguration::OrpheusConfiguration()
     : dname((string) getenv("HOME") + "/.orpheus"),
-      oggplayer("ogg123 -v"), streamplayer("mplayer"),
+      oggplayer("ogg123 -v"), flacplayer("ogg123 -v"), streamplayer("mplayer"),
       cddev("/dev/cdrom"), mixerdev("/dev/mixer"),
       radioxml("http://www.screamer-radio.com/update.php?fetch=presets"),
       playmode(Normal), sortorder(noSort), cdautofetch(true),
@@ -96,7 +96,7 @@ void OrpheusConfiguration::save() const {
 	f
 	    << "mp3player" << "\t" << mp3player << endl
 	    << "oggplayer" << "\t" << oggplayer << endl
-	    << "flacplayer" << "\t" << oggplayer << endl
+	    << "flacplayer" << "\t" << flacplayer << endl
 	    << "streamplayer" << "\t" << streamplayer << endl
 	    << "cddev" << "\t" << cddev << endl
 	    << "mixerdev" << "\t" << mixerdev << endl
