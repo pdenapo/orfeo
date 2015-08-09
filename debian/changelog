@@ -1,4 +1,4 @@
-orpheus (1.6-1.1ubuntu1) unstable; urgency=medium
+orpfeo (1.6-1.1ubuntu1) unstable; urgency=medium
 
   * Forked. Uses cmake for building. Support flac format.
 
