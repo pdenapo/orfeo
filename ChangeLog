@@ -1,10 +1,9 @@
-2015-08-01  gettextize  <bug-gnu-gettext@gnu.org>
 
-	* Makefile.am (SUBDIRS): Remove intl.
-	(ACLOCAL_AMFLAGS): New variable.
-	(EXTRA_DIST): Add m4/ChangeLog.
-	* configure.ac (AC_OUTPUT): Remove intl/Makefile.
+Not used anymore for this fork. The source code is at
 
+https://github.com/pdenapo/orpheus_still_lives
+
+===========================================================================
 
 0.5
 ---
