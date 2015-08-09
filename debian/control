@@ -6,7 +6,7 @@ Build-Depends: cdbs, debhelper (>= 5), quilt, autotools-dev, libncurses5-dev, li
 Standards-Version: 3.7.2
 Homepage: http://thekonst.net/orpheus/
 
-Package: orpheus
+Package: orfeo
 Architecture: any
 Depends: ${shlibs:Depends}
 Recommends: vorbis-tools, mpg321 | mpg123
