@@ -6,4 +6,4 @@ include /usr/share/cdbs/1/class/cmake.mk
 
 DEB_INSTALL_CHANGELOGS_ALL := ChangeLog
 DEB_INSTALL_DOCS_ALL := FAQ README
-DEB_INSTALL_MANPAGES_orpheus := orpheus.1
+DEB_INSTALL_MANPAGES_orfeo := orfeo.1
