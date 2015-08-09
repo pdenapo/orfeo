@@ -1,4 +1,4 @@
-Source: orpheus
+Source: ofeo
 Section: sound
 Priority: optional
 Maintainer: Noritada Kobayashi <nori1@dolphin.c.u-tokyo.ac.jp>
@@ -11,9 +11,10 @@ Architecture: any
 Depends: ${shlibs:Depends}
 Recommends: vorbis-tools, mpg321 | mpg123
 Description: light-weight text mode menu- and window-driven audio player
- Orpheus is a light-weight text mode menu- and window-driven audio player
- application for CDs and files in MP3 and Vorbis Ogg format.  Brief list
- of its features is as follows:
+ Ofeo is a light-weight text mode menu- and window-driven audio player
+ application for CDs and files in MP3, Flac and Vorbis Ogg formats.
+ Forked from orpheus (http://thekonst.net/orpheus/)  
+ Brief list of its features is as follows:
    * Text mode user interface
      + Based on the ncurses library
      + Provides windows, menus and dialogs

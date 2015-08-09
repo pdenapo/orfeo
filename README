@@ -1,6 +1,10 @@
 
-This a fork of Orpheus ncursed-based mp3 player, by Konstantin 
+Orfeo is a fork of Orpheus, an  ncursed-based mp3 player, by Konstantin 
 Klyagin <konst@konst.org.ua>. A nice and useful program that I like much.
+
+Orfeo is the translation of the name Orpheus into spanish. I have chosen
+this name to indicate that it is a fork of the original program, with a few
+differences.
 
 Original Orpheus webpage: http://thekonst.net/orpheus/
 
