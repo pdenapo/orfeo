@@ -1413,8 +1413,8 @@ void OrpheusTextUI::commandline(int argc, char **argv) {
 
 	} else if(arg == "--version" || arg == "-v") {
 	    cout << PACKAGE << " " << PACKAGE_VERSION << endl
-		<< "Written by Konstantin Klyagin." << endl << endl
-		<< "Modified by Pablo De Nápoli." << endl << endl
+		<< "Based on Orpheus Written by Konstantin Klyagin." << endl << endl
+		<< "Forked by Pablo De Nápoli." << endl << endl
 		<< "This is free software; see the source for copying conditions.  There is NO" << endl
 		<< "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE." << endl;
 	    exit(0);
