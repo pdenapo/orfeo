@@ -235,7 +235,7 @@ void OrpheusTextUI::init() {
 
 void OrpheusTextUI::redraw() {
     // string url = "http://thekonst.net/orpheus/" 
-    string url = "http://github.com/pdenapo/orpheus_still_lives";
+    string url = "http://github.com/pdenapo/orfeo";
 
     attrset(schemer[Status]);
     mvhline(0, 0, ' ', COLS);
